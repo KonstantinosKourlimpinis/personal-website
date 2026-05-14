@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main>
+      <main className="md:ml-56">
         <Hero />
         <Experience />
         <Projects />
