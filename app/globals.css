@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Backgrounds ── natural deep ocean, no cold blue-black */
+  --color-ocean-black: #060e1a;
+  --color-ocean-deep: #0b1c2e;
+  --color-ocean-mid:  #112840;
+  --color-ocean-blue: #1a3f5c;
+
+  /* ── Accents ── natural, not neon */
+  --color-cyan:      #38bdf8;   /* sky-400  — daylight ocean blue   */
+  --color-cyan-dim:  #0ea5e9;   /* sky-500                          */
+  --color-bio-green: #34d399;   /* emerald-400 — tropical green     */
+  --color-coral:     #fb923c;   /* orange-400  — warm natural coral */
+  --color-coral-dim: #f97316;   /* orange-500                       */
+  --color-sand:      #fef3c7;   /* warm sand highlight              */
+
+  /* ── Text ── */
+  --color-text-primary:   #f0f9ff;
+  --color-text-secondary: #94a3b8;
+
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+* { box-sizing: border-box; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #060e1a;
+  color: #f0f9ff;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #060e1a; }
+::-webkit-scrollbar-thumb { background: #0ea5e9; border-radius: 2px; }
+::selection { background: rgba(56,189,248,0.2); color: #fff; }
+
+/* ── Bubbles ────────────────────────────────────────── */
+@keyframes float-up {
+  0%   { transform: translateY(0) translateX(0) scale(1);          opacity: 0.6; }
+  50%  { transform: translateY(-45vh) translateX(10px) scale(1.04); opacity: 0.3; }
+  100% { transform: translateY(-95vh) translateX(-5px) scale(0.8);  opacity: 0; }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(56, 189, 248, 0.04);
+  animation: float-up linear infinite;
+  pointer-events: none;
+}
+
+/* ── Light rays ─────────────────────────────────────── */
+@keyframes ray-pulse {
+  0%, 100% { opacity: 0.02; }
+  50%       { opacity: 0.05; }
+}
+
+.light-ray {
+  position: absolute;
+  background: linear-gradient(180deg, rgba(56,189,248,0.12) 0%, transparent 100%);
+  transform-origin: top center;
+  animation: ray-pulse ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Glass card ─────────────────────────────────────── */
+.glass-card {
+  background: rgba(11, 28, 46, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* ── Tag pill ───────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.06);
+}
+
+/* ── Timeline ───────────────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #38bdf8 0%, rgba(56,189,248,0.06) 100%);
+}
+
+/* ── Section util ───────────────────────────────────── */
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-inner { padding: 8rem 2.5rem; }
 }
