@@ -29,6 +29,7 @@ export default function OGImage() {
             width: "4px",
             height: "100%",
             background: "linear-gradient(180deg, #00d4ff 0%, transparent 100%)",
+            display: "flex",
           }}
         />
 
@@ -44,24 +45,38 @@ export default function OGImage() {
             fontWeight: 700,
             letterSpacing: "4px",
             marginBottom: "40px",
+            display: "flex",
           }}
         >
           KK
         </div>
 
-        {/* Name */}
+        {/* Name line 1 */}
         <div
           style={{
             color: "#f0f6ff",
             fontSize: "72px",
             fontWeight: 900,
             lineHeight: 1.1,
-            marginBottom: "24px",
             letterSpacing: "-2px",
+            display: "flex",
           }}
         >
           Konstantinos
-          <br />
+        </div>
+
+        {/* Name line 2 */}
+        <div
+          style={{
+            color: "#f0f6ff",
+            fontSize: "72px",
+            fontWeight: 900,
+            lineHeight: 1.1,
+            letterSpacing: "-2px",
+            marginBottom: "24px",
+            display: "flex",
+          }}
+        >
           Kourlimpinis
         </div>
 
@@ -73,9 +88,10 @@ export default function OGImage() {
             fontWeight: 400,
             letterSpacing: "1px",
             marginBottom: "48px",
+            display: "flex",
           }}
         >
-          Analyst · Software &amp; AI Engineer · Curious Adventurer
+          Analyst · Software & AI Engineer · Curious Adventurer
         </div>
 
         {/* Location */}
@@ -85,6 +101,7 @@ export default function OGImage() {
             fontSize: "20px",
             fontWeight: 500,
             letterSpacing: "2px",
+            display: "flex",
           }}
         >
           Lausanne, Switzerland

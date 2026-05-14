@@ -15,6 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://konstantinos-kourlimpinis.vercel.app"),
   title: "Konstantinos Kourlimpinis — Analyst & AI Engineer",
   description:
     "Personal portfolio of Konstantinos Kourlimpinis — Analyst, Software & AI Engineer, and passionate freediver based in Lausanne, Switzerland.",
