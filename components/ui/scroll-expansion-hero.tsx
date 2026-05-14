@@ -20,6 +20,7 @@ interface ScrollExpandMediaProps {
   bgCaption?: string;
   expandedBgCaption?: string;
   title?: string;
+  tagline?: string;
   date?: string;
   scrollToExpand?: string;
   textBlend?: boolean;
@@ -35,6 +36,7 @@ const ScrollExpandMedia = ({
   bgCaption,
   expandedBgCaption,
   title,
+  tagline,
   date,
   scrollToExpand,
   textBlend,
@@ -331,6 +333,21 @@ const ScrollExpandMedia = ({
                   {restOfTitle}
                 </motion.h2>
               </div>
+
+              {tagline && (
+                <div
+                  className='absolute bottom-24 left-0 right-0 flex flex-col items-center gap-2 z-20 pointer-events-none select-none'
+                  style={{ opacity: Math.max(0, 1 - scrollProgress * 3) }}
+                >
+                  <div className='w-8 h-px bg-cyan/60' />
+                  <p className='text-white font-semibold text-base md:text-xl tracking-[0.18em] uppercase drop-shadow-lg'
+                    style={{ color: '#00d4ff', textShadow: '0 0 30px rgba(0,212,255,0.5)' }}
+                  >
+                    {tagline}
+                  </p>
+                  <div className='w-8 h-px bg-cyan/60' />
+                </div>
+              )}
             </div>
 
             <motion.section

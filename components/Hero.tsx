@@ -14,6 +14,7 @@ export default function Hero() {
         bgCaption="Zarakes, Greece"
         expandedBgCaption="Santa Marta, Colombia"
         title="Konstantinos Kourlimpinis"
+        tagline={personal.tagline}
         date="Lausanne · Switzerland"
         scrollToExpand="Scroll to explore"
         textBlend
