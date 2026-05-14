@@ -74,12 +74,13 @@ export default function Hero() {
           animate="show"
           className="flex flex-col items-center gap-5 w-full"
         >
-          {/* Location pill */}
-          <motion.div variants={fadeUp}>
-            <span className="inline-flex items-center gap-2 text-cyan text-xs tracking-[0.3em] uppercase font-medium px-4 py-1.5 rounded-full border border-cyan/20 bg-cyan/5">
-              📍 Lausanne, Switzerland
-            </span>
-          </motion.div>
+          {/* Roles */}
+          <motion.p
+            variants={fadeUp}
+            className="text-white/70 text-xs sm:text-sm tracking-[0.2em] uppercase"
+          >
+            Analyst · Software &amp; AI Engineer · Curious Adventurer
+          </motion.p>
 
           {/* Name */}
           <motion.h1
@@ -113,13 +114,12 @@ export default function Hero() {
             {personal.tagline}
           </motion.p>
 
-          {/* Roles */}
-          <motion.p
-            variants={fadeUp}
-            className="text-white/55 text-xs sm:text-sm tracking-[0.2em] uppercase"
-          >
-            Analyst · Software &amp; AI Engineer · Curious Adventurer
-          </motion.p>
+          {/* Location pill */}
+          <motion.div variants={fadeUp}>
+            <span className="inline-flex items-center gap-2 text-white/45 text-xs tracking-[0.25em] uppercase font-medium">
+              📍 Lausanne, Switzerland
+            </span>
+          </motion.div>
 
           {/* CTA buttons */}
           <motion.div
