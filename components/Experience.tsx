@@ -194,6 +194,58 @@ export default function Experience() {
                 )}
               </div>
             </div>
+
+            {/* Leadership */}
+            <div>
+              <h3 className="font-display font-semibold text-lg text-text-secondary tracking-widest uppercase mb-6">
+                Leadership
+              </h3>
+              <div className="flex flex-col gap-4">
+                {[
+                  {
+                    role: "Faculty President",
+                    duration: "3+ years",
+                    description:
+                      "Represented the entire MSc Business Analytics programme. Collected student feedback, organised open discussions, and communicated directly with professors and faculty as the elected voice of the student body.",
+                  },
+                  {
+                    role: "MSc BA Student Representative",
+                    duration: null,
+                    description:
+                      "Official representative for the MSc Business Analytics cohort in faculty meetings and academic decision-making processes.",
+                  },
+                  {
+                    role: "Group Tutor — Statistics & Econometrics",
+                    duration: null,
+                    description:
+                      "Led peer study groups and tutoring sessions, helping fellow students build confidence in quantitative methods.",
+                  },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="glass-card rounded-xl p-4 border-l-2 border-cyan/30"
+                  >
+                    <div className="flex items-start justify-between gap-2 mb-1.5">
+                      <p className="text-text-primary font-semibold text-sm leading-snug">
+                        {item.role}
+                      </p>
+                      {item.duration && (
+                        <span className="text-xs text-cyan shrink-0 font-medium">
+                          {item.duration}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-text-secondary text-xs leading-relaxed">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -224,11 +276,6 @@ export default function Experience() {
                 label: "Tools",
                 items: ["Power BI", "Tableau", "Dataiku", "n8n", "Make.com", "Airtable", "Vercel", "Git"],
                 color: "text-coral",
-              },
-              {
-                label: "Leadership",
-                items: ["Faculty President (3+ yrs)", "MSc BA Representative", "Group Tutor — Stats & Econometrics"],
-                color: "text-cyan",
               },
             ].map((group, i) => (
               <div key={group.label}>

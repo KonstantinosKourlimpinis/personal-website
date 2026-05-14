@@ -62,11 +62,13 @@ export default function Contact() {
           <h2 className="font-display font-bold text-4xl md:text-6xl text-text-primary mb-6">
             Let&apos;s Build Something Meaningful.
           </h2>
-          <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-            Whether it&apos;s a collaboration, a job opportunity, or just a
-            conversation about data, AI, or the ocean — I&apos;d love to hear
-            from you.
-          </p>
+          <div className="glass-card rounded-2xl px-6 md:px-10 py-5 max-w-xl mx-auto">
+            <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+              Whether it&apos;s a collaboration, a job opportunity, or just a
+              conversation about data, AI, or the ocean — I&apos;d love to hear
+              from you.
+            </p>
+          </div>
         </motion.div>
 
         {/* Contact cards */}

@@ -321,14 +321,20 @@ const ScrollExpandMedia = ({
                 }`}
               >
                 <motion.h2
-                  className='text-5xl md:text-6xl lg:text-8xl font-bold text-white transition-none tracking-tight'
-                  style={{ transform: `translateX(-${textTranslateX}vw)` }}
+                  className='text-4xl md:text-6xl lg:text-8xl font-bold text-white transition-none tracking-tight'
+                  style={{
+                    transform: `translateX(-${textTranslateX}vw)`,
+                    textShadow: '-2px -2px 0 rgba(0,0,0,0.7), 2px -2px 0 rgba(0,0,0,0.7), -2px 2px 0 rgba(0,0,0,0.7), 2px 2px 0 rgba(0,0,0,0.7), 0 -2px 0 rgba(0,0,0,0.7), 0 2px 0 rgba(0,0,0,0.7), -2px 0 0 rgba(0,0,0,0.7), 2px 0 0 rgba(0,0,0,0.7)',
+                  }}
                 >
                   {firstWord}
                 </motion.h2>
                 <motion.h2
-                  className='text-5xl md:text-6xl lg:text-8xl font-bold text-center text-white transition-none tracking-tight'
-                  style={{ transform: `translateX(${textTranslateX}vw)` }}
+                  className='text-4xl md:text-6xl lg:text-8xl font-bold text-center text-white transition-none tracking-tight'
+                  style={{
+                    transform: `translateX(${textTranslateX}vw)`,
+                    textShadow: '-2px -2px 0 rgba(0,0,0,0.7), 2px -2px 0 rgba(0,0,0,0.7), -2px 2px 0 rgba(0,0,0,0.7), 2px 2px 0 rgba(0,0,0,0.7), 0 -2px 0 rgba(0,0,0,0.7), 0 2px 0 rgba(0,0,0,0.7), -2px 0 0 rgba(0,0,0,0.7), 2px 0 0 rgba(0,0,0,0.7)',
+                  }}
                 >
                   {restOfTitle}
                 </motion.h2>
@@ -336,21 +342,18 @@ const ScrollExpandMedia = ({
 
               {tagline && (
                 <div
-                  className='absolute top-24 left-0 right-0 flex flex-col items-center gap-2 z-20 pointer-events-none select-none'
+                  className='absolute top-20 left-0 right-0 flex flex-col items-center px-4 z-20 pointer-events-none select-none'
                   style={{ opacity: Math.max(0, 1 - scrollProgress * 3) }}
                 >
-                  <div className='w-8 h-px bg-ocean-black/40' />
-                  <p className='font-semibold text-sm md:text-base tracking-[0.2em] uppercase drop-shadow-sm'
-                    style={{ color: '#0a1628', textShadow: '0 1px 3px rgba(255,255,255,0.3)' }}
-                  >
-                    {tagline}
-                  </p>
-                  <p className='text-xs md:text-sm tracking-[0.15em] uppercase drop-shadow-sm'
-                    style={{ color: '#0a1628', opacity: 0.65 }}
-                  >
-                    Analyst · Software &amp; AI Engineer · Curious Adventurer
-                  </p>
-                  <div className='w-8 h-px bg-ocean-black/40' />
+                  <div className='bg-black/55 backdrop-blur-md border border-white/15 rounded-2xl px-5 md:px-10 py-3 md:py-4 flex flex-col items-center gap-1.5'>
+                    <p className='font-bold text-sm md:text-lg tracking-[0.12em] md:tracking-[0.2em] uppercase text-white drop-shadow-md'>
+                      {tagline}
+                    </p>
+                    <div className='w-8 h-px bg-white/30' />
+                    <p className='text-[10px] md:text-sm tracking-[0.08em] md:tracking-[0.15em] uppercase text-white/75'>
+                      Analyst · Software &amp; AI Engineer · Curious Adventurer
+                    </p>
+                  </div>
                 </div>
               )}
             </div>

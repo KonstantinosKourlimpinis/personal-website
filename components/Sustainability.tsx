@@ -52,12 +52,16 @@ export default function Sustainability() {
           <h2 className="font-display font-bold text-4xl md:text-5xl text-text-primary mb-6">
             Sustainability &amp; Volunteering
           </h2>
-          <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
-            Nature is not a backdrop to life — it is life. Through the Modern Odyssey
-            project, I joined a team of 15 volunteers across 6 eco and urban communities
-            over 7 weeks. We planted trees, cleaned rivers and beaches, built with
-            sustainable materials, and found what truly brings people together.
-          </p>
+          <div className="glass-card rounded-2xl p-6 md:p-8 max-w-2xl">
+            <p className="text-text-primary text-base md:text-lg leading-relaxed font-medium mb-2">
+              Modern Odyssey — The project that changed my life.
+            </p>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+              A team of 15 volunteers come together from different parts of the world
+              to learn about permaculture, live a sustainable lifestyle, and contribute
+              in making this world a better place for everyone.
+            </p>
+          </div>
         </motion.div>
 
         {/* Photo grid */}
@@ -86,34 +90,12 @@ export default function Sustainability() {
 
         {/* Info cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Project description */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="glass-card rounded-2xl p-8"
-          >
-            <h3 className="font-display font-bold text-lg text-text-primary mb-4">
-              Modern Odyssey
-            </h3>
-            <p className="text-text-secondary text-sm leading-relaxed mb-4">
-              Year 2 of the Modern Odyssey volunteering project — 2 vans, 15 people,
-              7 weeks, 5 eco-communities and 1 urban community across Europe.
-              Like Odysseus searching for Ithaca, we searched for home — and found it in nature.
-            </p>
-            <p className="text-text-secondary text-sm leading-relaxed">
-              My biggest lesson: when you strip away convenience and live close to the earth,
-              something essential wakes up. Nature is not what divides us — it is what unites us.
-            </p>
-          </motion.div>
-
           {/* Activities + eco note */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{ duration: 0.7 }}
             className="flex flex-col gap-6"
           >
             <div className="glass-card rounded-2xl p-6">

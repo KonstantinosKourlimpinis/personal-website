@@ -244,10 +244,10 @@ export const diveInfo = {
 };
 
 export const navLinks = [
-  { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Dive", href: "#dive" },
   { label: "Nature", href: "#sustainability" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

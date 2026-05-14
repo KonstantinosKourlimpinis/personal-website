@@ -114,9 +114,6 @@ function ProjectCard({
 }
 
 export default function Projects() {
-  const featured = projects.filter((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
-
   return (
     <section
       id="projects"
@@ -154,16 +151,9 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Featured: 2-col */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {featured.map((p, i) => (
-            <ProjectCard key={p.id} project={p} index={i} />
-          ))}
-        </div>
-
-        {/* Rest: 3-col */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {rest.map((p, i) => (
+        {/* All projects: 2-col on md, 3-col on lg */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
