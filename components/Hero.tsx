@@ -21,12 +21,6 @@ export default function Hero() {
       >
         {/* Shown after video fully expands */}
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-white/50 text-xs tracking-[0.3em] uppercase mb-4">
-            Analyst · Software &amp; AI Engineer · Curious Adventurer
-          </p>
-          <p className="text-white/90 text-xl md:text-2xl italic font-light mb-10 leading-relaxed">
-            &ldquo;{personal.tagline}&rdquo;
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#projects"
