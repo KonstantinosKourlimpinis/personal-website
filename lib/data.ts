@@ -155,7 +155,7 @@ export const projects = [
     tags: ["Next.js", "Airtable", "n8n", "Anthropic API", "Make.com", "Vercel"],
     status: "live",
     link: null,
-    image: "/projects/axion.jpeg",
+    image: "/projects/axion.jpg",
     featured: true,
   },
   {
