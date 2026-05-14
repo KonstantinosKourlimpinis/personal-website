@@ -336,7 +336,7 @@ const ScrollExpandMedia = ({
 
               {tagline && (
                 <div
-                  className='absolute top-8 left-0 right-0 flex flex-col items-center gap-2 z-20 pointer-events-none select-none'
+                  className='absolute top-24 left-0 right-0 flex flex-col items-center gap-2 z-20 pointer-events-none select-none'
                   style={{ opacity: Math.max(0, 1 - scrollProgress * 3) }}
                 >
                   <div className='w-8 h-px bg-ocean-black/40' />
@@ -344,6 +344,11 @@ const ScrollExpandMedia = ({
                     style={{ color: '#0a1628', textShadow: '0 1px 3px rgba(255,255,255,0.3)' }}
                   >
                     {tagline}
+                  </p>
+                  <p className='text-xs md:text-sm tracking-[0.15em] uppercase drop-shadow-sm'
+                    style={{ color: '#0a1628', opacity: 0.65 }}
+                  >
+                    Analyst · Software &amp; AI Engineer · Curious Adventurer
                   </p>
                   <div className='w-8 h-px bg-ocean-black/40' />
                 </div>
