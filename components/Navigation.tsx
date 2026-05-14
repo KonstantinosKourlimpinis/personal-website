@@ -12,6 +12,7 @@ interface NavNode {
 }
 
 const NAV_STRUCTURE: NavNode[] = [
+  { name: "home.tsx",    type: "file", extension: "tsx", href: "hero"    },
   {
     name: "work",
     type: "folder",
@@ -33,10 +34,15 @@ const NAV_STRUCTURE: NavNode[] = [
 ];
 
 const EXT_STYLE: Record<string, { color: string; icon: string }> = {
-  tsx:     { color: "text-sky-400",     icon: "⚛" },
-  ts:      { color: "text-blue-400",    icon: "◆" },
-  me:      { color: "text-emerald-400", icon: "◉" },
-  default: { color: "text-slate-400",   icon: "◇" },
+  tsx:     { color: "#7dd3fc", icon: "⚛" },  // sky-300,     React files
+  ts:      { color: "#60a5fa", icon: "◆" },  // blue-400,    TS files
+  me:      { color: "#6ee7b7", icon: "◉" },  // emerald-300, personal
+  svg:     { color: "#4ade80", icon: "◐" },  // green-400
+  png:     { color: "#86efac", icon: "◑" },  // green-300
+  json:    { color: "#fde047", icon: "{}" }, // yellow-300
+  md:      { color: "#94a3b8", icon: "◊" },  // slate-400,   muted
+  css:     { color: "#c084fc", icon: "◈" },  // purple-400
+  default: { color: "#64748b", icon: "◇" },  // slate-500
 };
 
 function getExt(ext?: string) {
@@ -105,25 +111,23 @@ function FileItem({ node, depth, activeSection, onNavigate }: FileItemProps) {
                 strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           ) : (
-            <span className={cn("text-xs", ext.color)}>{ext.icon}</span>
+            <span className="text-xs" style={{ color: ext.color }}>{ext.icon}</span>
           )}
         </div>
 
         {/* Folder / file icon */}
-        <div className={cn(
-          "flex items-center justify-center w-4 h-4 transition-all duration-150",
-          isFolder
-            ? hovered ? "text-folder-icon scale-110" : "text-folder-icon/70"
-            : hovered ? cn(ext.color, "scale-110") : cn(ext.color, "opacity-60")
-        )}>
+        <div
+          className="flex items-center justify-center w-4 h-4 shrink-0 transition-all duration-150"
+          style={{ color: isFolder ? "#4d9ef7" : ext.color }}
+        >
           {isFolder ? (
-            <svg width="14" height="12" viewBox="0 0 16 14" fill="currentColor">
+            <svg width="15" height="13" viewBox="0 0 16 14" fill="currentColor">
               <path d="M1.5 1C0.671573 1 0 1.67157 0 2.5V11.5C0 12.3284 0.671573 13 1.5 13H14.5C15.3284 13 16 12.3284 16 11.5V4.5C16 3.67157 15.3284 3 14.5 3H8L6.5 1H1.5Z" />
             </svg>
           ) : (
-            <svg width="11" height="14" viewBox="0 0 14 16" fill="currentColor" opacity="0.8">
+            <svg width="11" height="14" viewBox="0 0 14 16" fill="currentColor">
               <path d="M1.5 0C0.671573 0 0 0.671573 0 1.5V14.5C0 15.3284 0.671573 16 1.5 16H12.5C13.3284 16 14 15.3284 14 14.5V4.5L9.5 0H1.5Z" />
-              <path d="M9 0V4.5H14" fill="currentColor" fillOpacity="0.4" />
+              <path d="M9 0V4.5H14" fill="currentColor" fillOpacity="0.35" />
             </svg>
           )}
         </div>
@@ -175,7 +179,7 @@ export default function Navigation() {
 
   // Track active section
   useEffect(() => {
-    const ids = ["experience", "projects", "dive", "sustainability", "about", "contact"];
+    const ids = ["hero", "experience", "projects", "dive", "sustainability", "about", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -240,9 +244,17 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Desktop: always-visible fixed sidebar */}
-      <aside className="hidden md:flex fixed left-0 top-0 h-full w-56 z-50 flex-col"
-        style={{ background: "var(--color-file-tree-bg)", borderRight: "1px solid rgba(56,189,248,0.1)" }}
+      {/* Desktop: floating window */}
+      <aside
+        className="hidden md:flex fixed left-5 top-5 z-50 flex-col w-52 rounded-2xl overflow-hidden"
+        style={{
+          background: "rgba(6, 14, 26, 0.92)",
+          border: "1px solid rgba(56,189,248,0.15)",
+          boxShadow: "0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(56,189,248,0.05)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          maxHeight: "calc(100vh - 40px)",
+        }}
       >
         {sidebarContent}
       </aside>
